@@ -1,6 +1,5 @@
 import Greeter from "./components/Greeter";
 
-// Fill me in 💡
 function App() {
   return (
     <div>
