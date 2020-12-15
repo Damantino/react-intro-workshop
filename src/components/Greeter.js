@@ -5,4 +5,3 @@ function Greeter() {
 }
 
 // Export me 💡
-export default Greeter;
