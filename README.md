@@ -37,13 +37,13 @@ Run the tests, all of them should fail ❌
 We're going to practice through [TDD](<https://en.wikipedia.org/wiki/Test-driven_development#:~:text=Test%2Ddriven%20development%20(TDD),software%20against%20all%20test%20cases.>)
 
 ```sh
-yarn test
+yarn test <name-of-iteration>
 ```
 
 or
 
 ```sh
-npm test
+npm test <name-of-iteration>
 ```
 
 Code until the all tests pass ✅
@@ -60,7 +60,17 @@ Check the code, and come back to your branch
 
 ## Iteration 01
 
+- What is a component?
 - Creating our `App` component
 - Creating a new `Greeter` component
+- What is a prop?
 - Using `props` to customize a component
 - Using components as building-blocks
+
+## Iteration 02
+
+- Passing things as `props`
+  - Objects
+  - Functions
+- Event listeners in React
+  - on`<Event>`, _for example_ `onClick`
