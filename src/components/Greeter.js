@@ -1,7 +1,8 @@
-import React from "react";
+// Import react 💡
 
-function Greeter(props) {
-  return <div>Hello {props.name} {props.emoji}</div>;
+function Greeter() {
+  // Fill me in 💡
 }
 
+// Export me 💡
 export default Greeter;

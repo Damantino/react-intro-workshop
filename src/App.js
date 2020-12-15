@@ -1,11 +1,8 @@
-import Greeter from "./components/Greeter";
+// Import React 💡
+// Import Greeter from components 💡
 
 function App() {
-  return (
-    <div>
-      <Greeter name="Assembler" emoji="🖐" />
-    </div>
-  );
+  // Fill me in 💡
 }
 
 export default App;
