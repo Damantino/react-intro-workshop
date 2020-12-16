@@ -74,3 +74,9 @@ Check the code, and come back to your branch
   - Functions
 - Event listeners in React
   - on`<Event>`, _for example_ `onClick`
+
+## Iteration 03
+
+- The `children` prop and how we can compose components
+- Creating a `Card` component
+- Passing components as children

@@ -1,0 +1,6 @@
+.card-wrapper {
+  border: 1px solid #999999;
+  border-radius: 4px;
+  padding: 8px;
+  max-width: 200px;
+}

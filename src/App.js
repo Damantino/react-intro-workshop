@@ -1,3 +1,4 @@
+import Card from "./components/Card";
 import Greeter from "./components/Greeter";
 import PersonDetails from "./components/PersonDetails";
 
@@ -13,6 +14,11 @@ function App() {
         }}
         sayCatchPhrase={() => console.log("Howdy!")}
       />
+      <Card>
+        <h1>Hi there!</h1>
+        <p>I am inside a card</p>
+        <Greeter name="Jane Doe" emoji="🎈" />
+      </Card>
     </div>
   );
 }
