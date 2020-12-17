@@ -80,3 +80,9 @@ Check the code, and come back to your branch
 - The `children` prop and how we can compose components
 - Creating a `Card` component
 - Passing components as children
+
+## Iteration 04
+
+- Iterating through `data` in a `component`
+- Mapping `data` to `components`
+- Conditional rendering
