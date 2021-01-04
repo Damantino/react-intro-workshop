@@ -1,8 +1,14 @@
 import Card from "./components/Card";
+import CardList from "./components/CardList";
 import Greeter from "./components/Greeter";
 import PersonDetails from "./components/PersonDetails";
 
 function App() {
+  const peopleList = [
+    { name: "kanye", lastName: "west" },
+    { name: "jacques", lastName: "berman" },
+  ];
+
   return (
     <div>
       <Greeter name="Assembler" emoji="🖐" />
@@ -19,6 +25,7 @@ function App() {
         <p>I am inside a card</p>
         <Greeter name="Jane Doe" emoji="🎈" />
       </Card>
+      <CardList list={peopleList} />
     </div>
   );
 }
