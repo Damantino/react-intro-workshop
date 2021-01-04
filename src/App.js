@@ -3,6 +3,8 @@ import Greeter from "./components/Greeter";
 import PersonDetails from "./components/PersonDetails";
 
 function App() {
+  // @hint make sure to create a list of people and include kanye west
+
   return (
     <div>
       <Greeter name="Assembler" emoji="🖐" />
@@ -19,6 +21,7 @@ function App() {
         <p>I am inside a card</p>
         <Greeter name="Jane Doe" emoji="🎈" />
       </Card>
+      {/* Implement CardList component */}
     </div>
   );
 }

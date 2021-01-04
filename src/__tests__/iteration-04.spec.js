@@ -1,4 +1,5 @@
 import { render, screen } from "@testing-library/react";
+import App from "../App";
 import CardList from "../components/CardList";
 
 const peopleList = [
@@ -16,5 +17,10 @@ describe("iteration-04", () => {
   it("should not render a list of cards when no users", () => {
     render(<CardList />);
     expect(screen.getByText(/No users!/i)).toBeInTheDocument();
+  });
+
+  it("should render a list of users in App", () => {
+    render(<App />);
+    expect(screen.getByText(/kanye west/i)).toBeInTheDocument();
   });
 });
