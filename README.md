@@ -67,7 +67,7 @@ React was created by Jordan Walke, a software engineer at Facebook.
 
 Let’s take a look at an Instagram webpage example, entirely built using React, to get a better understanding of how React works.
 
-![](./assets/instagram-layout.png)
+![](https://i.imgur.com/Oh5BUgF.png)
 
 As the illustration shows, React divides the UI into multiple components, which makes the code easier to debug. This way, each component has its property and function.
 
@@ -315,7 +315,7 @@ class Example extends React.Component {
 }
 ```
 
-![](./assets/update-lifecycle.gif)
+![](https://imgur.com/VYmcEom.gif)
 
 ### Unmounting
 
@@ -356,7 +356,7 @@ class Example extends React.Component {
 }
 ```
 
-![](./assets/unmount-lifecycle.gif)
+![](https://imgur.com/60NQV9o.gif)
 
 ---
 
