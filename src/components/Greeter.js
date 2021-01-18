@@ -11,7 +11,7 @@ function Greeter(props) {
     return () => {
       document.title = farewellText;
     };
-  }, [name, props.emoji]);
+  }, [props.emoji, greetingText, farewellText]);
 
   function handleChangeName(e) {
     setName(e.target.value);
