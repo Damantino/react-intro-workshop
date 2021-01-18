@@ -483,3 +483,70 @@ Key takeaways:
 
 - Into to state
 - useState hook
+
+## Iteration 07
+
+On this final iteration we will be reviewing `routing` with `react-router-dom`
+
+First, make sure you install react-router-dom through:
+
+`yarn add react-router-dom` or `npm install react-router-dom`
+
+Making use of this library, wrap your app so that you're able to navigate through pages and render one component or another.
+
+[react-router-dom API](https://reactrouter.com/web/guides/quick-start)
+
+Given the example below:
+
+```jsx
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  useRouteMatch,
+  useParams,
+} from "react-router-dom";
+
+export default function App() {
+  return (
+    <Router>
+      <div>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
+          <li>
+            <Link to="/topics">Topics</Link>
+          </li>
+        </ul>
+
+        <Switch>
+          <Route path="/about">
+            <About />
+          </Route>
+          <Route path="/topics">
+            <Topics />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
+  );
+}
+```
+
+Navigate to `/src/App.js` and add a new Route and Switch to display a page when the url changes to `/other` and display some text. For instance, Lorem Ipsum.
+
+Keep in mind the order for the routes inside the switch. Your root route should be last.
+
+Key takeaways:
+
+- Using an external library
+- Basics of routing
+- Conditional rendering depending on routes
