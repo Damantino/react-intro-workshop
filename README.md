@@ -1,10 +1,41 @@
-# React intro workshop
+<!-- vscode-markdown-toc -->
+
+- 1. [Getting Started](#GettingStarted)
+- 2. [What is React?](#WhatisReact)
+- 3. [Why use react?](#Whyusereact)
+- 4. [Creating a react app](#Creatingareactapp)
+- 5. [JSX](#JSX)
+- 6. [Specifying Attributes with JSX](#SpecifyingAttributeswithJSX)
+- 7. [Specifying Children with JSX](#SpecifyingChildrenwithJSX)
+- 8. [Render](#Render)
+- 9. [Components and Props](#ComponentsandProps)
+- 10. [What are props?](#Whatareprops)
+- 11. [State](#State)
+  - 11.1. [So when would you use state?](#Sowhenwouldyouusestate)
+- 12. [Lifecycles](#Lifecycles)
+  - 12.1. [Mounting](#Mounting)
+  - 12.2. [Updating](#Updating)
+  - 12.3. [Unmounting](#Unmounting)
+- 13. [Lifecycles with hooks](#Lifecycleswithhooks)
+- 14. [Iteration 01](#Iteration01)
+- 15. [Iteration 02](#Iteration02)
+- 16. [Iteration 03](#Iteration03)
+- 17. [Iteration 04](#Iteration04)
+- 18. [Iteration 05](#Iteration05)
+- 19. [Iteration 06](#Iteration06)
+- 20. [Iteration 07](#Iteration07)
+
+<!-- vscode-markdown-toc-config
+	numbering=true
+	autoSave=true
+	/vscode-markdown-toc-config -->
+<!-- /vscode-markdown-toc --># React intro workshop
 
 ![Assembler School Logo](https://assets.website-files.com/5d7ac47d34aefe1ecf290ce6/5d7ac68da9740c393a589ee7_logo_org_1.png)
 
 The following workshop is a comprehensive react intro. We will cover all the basics concepts such as `componetization`, `legacy react`, `future react with hooks`, `state`, `component life cycle`.
 
-## Getting Started
+## 1. <a name='GettingStarted'></a>Getting Started
 
 In order to move along with the workshop:
 
@@ -58,7 +89,7 @@ git checkout iteration-01-solution
 
 Check the code, and come back to your branch
 
-## What is React?
+## 2. <a name='WhatisReact'></a>What is React?
 
 React is a JavaScript library for building user interfaces. It is an open-source, component-based, front-end library responsible only for the application’s view layer.
 
@@ -87,7 +118,7 @@ function App() {
 }
 ```
 
-## Why use react?
+## 3. <a name='Whyusereact'></a>Why use react?
 
 - Improved performance: React uses Virtual DOM and compares the components’ previous states and updates only the items in the Real DOM that were changed, instead of updating all of the components again, as conventional web applications do.
 - Reusable components: Components can be reused throughout the application, which in turn dramatically reduces the application’s development time.
@@ -96,7 +127,7 @@ function App() {
 - It can be used for the development of both web and mobile apps: There is a framework called React Native, derived from React itself, that is used for creating beautiful mobile applications.
 - Dedicated tools for easy debugging: React also has a Chrome extension that can be used to debug React applications.
 
-## Creating a react app
+## 4. <a name='Creatingareactapp'></a>Creating a react app
 
 To start using React we only need to install the official Create React App package.
 
@@ -110,7 +141,7 @@ Command to create react app
 create-react-app myapp
 ```
 
-## JSX
+## 5. <a name='JSX'></a>JSX
 
 JSX is a syntax extension to JavaScript. It is used with React to describe what the user interface should look like. By using JSX, we can write HTML structures in the same file that contains JavaScript code. This makes the code easier to understand and debug, as it avoids the usage of complex JavaScript DOM structures.
 
@@ -124,7 +155,7 @@ const element = <h1>Hello, {name}</h1>;
 <PostList />;
 ```
 
-## Specifying Attributes with JSX
+## 6. <a name='SpecifyingAttributeswithJSX'></a>Specifying Attributes with JSX
 
 - You may use quotes to specify string literals as attributes.
 - You may also use curly braces to embed a JavaScript expression in an attribute.
@@ -135,7 +166,7 @@ const element = <div tabIndex="0"></div>;
 const element = <img src={user.avatarUrl}></img>;
 ```
 
-## Specifying Children with JSX
+## 7. <a name='SpecifyingChildrenwithJSX'></a>Specifying Children with JSX
 
 ```jsx
 const element = (
@@ -146,7 +177,7 @@ const element = (
 );
 ```
 
-## Render
+## 8. <a name='Render'></a>Render
 
 The render() function in the HelloWorld component looks like it's returning HTML, but this is actually JSX. The JSX is translated to regular JavaScript at runtime. That component, after translation, looks like this:
 
@@ -156,7 +187,7 @@ const element = <h1>Hello, world</h1>;
 ReactDOM.render(element, document.getElementById("root"));
 ```
 
-## Components and Props
+## 9. <a name='ComponentsandProps'></a>Components and Props
 
 Components let you split the UI into independent, reusable pieces, and think about each piece in isolation.
 
@@ -164,11 +195,23 @@ The simplest way to define a component is to write a JavaScript function:
 
 ```jsx
 const Welcome = (props) => {
+  // You can add logic here
+
+  // Notice that a functional component should have a return statement
   return <h3>Hello {props.name}</h3>;
 };
+
+// Or using classes
+
+class Welcome extends React.Component {
+  // Notice that class components should have a render method
+  render() {
+    return <h1>Hello {this.props.name}</h1>;
+  }
+}
 ```
 
-## What is props?
+## 10. <a name='Whatareprops'></a>What are props?
 
 React is a component-based library which divides the UI into little reusable pieces. In some cases, those components need to communicate (send data to each other) and the way to pass data between components is by using props.
 
@@ -196,13 +239,13 @@ class Welcome extends React.Component {
 }
 ```
 
-## State
+## 11. <a name='State'></a>State
 
 Like props, state holds information about the component. However, the kind of information and how it is handled is different.
 
 By default, a component has no state. The Welcome component from the example is stateless:
 
-### So when would you use state?
+### 11.1. <a name='Sowhenwouldyouusestate'></a>So when would you use state?
 
 When a component needs to keep track of information between renderings the component itself can create, update, and use state.
 
@@ -239,13 +282,13 @@ function Counter() {
 }
 ```
 
-## Lifecycles
+## 12. <a name='Lifecycles'></a>Lifecycles
 
 Each component in React has a lifecycle which you can monitor and manipulate during its three main phases.
 
 The three phases are: Mounting, Updating, and Unmounting.
 
-### Mounting
+### 12.1. <a name='Mounting'></a>Mounting
 
 Mounting means putting elements into the DOM. React has several built-in methods that gets called, in this order, when mounting a component, but these are the common ones:
 
@@ -278,7 +321,7 @@ class Example extends React.Component {
 }
 ```
 
-### Updating
+### 12.2. <a name='Updating'></a>Updating
 
 The next phase in the lifecycle is when a component is updated.
 A component is updated whenever there is a change in the component's state or props.
@@ -317,7 +360,7 @@ class Example extends React.Component {
 
 ![](https://imgur.com/VYmcEom.gif)
 
-### Unmounting
+### 12.3. <a name='Unmounting'></a>Unmounting
 
 The next phase in the lifecycle is when a component is removed from the DOM, or unmounting as React likes to call it.
 
@@ -358,11 +401,44 @@ class Example extends React.Component {
 
 ![](https://imgur.com/60NQV9o.gif)
 
+## 13. <a name='Lifecycleswithhooks'></a>Lifecycles with hooks
+
+The Effect Hook lets you perform side effects in function components.
+
+If you’re familiar with React class lifecycle methods, you can think of useEffect Hook as componentDidMount, componentDidUpdate, and componentWillUnmount combined.
+
+```jsx
+import React, { useState, useEffect } from "react";
+
+function Example() {
+  const [count, setCount] = useState(0);
+
+  // Similar to componentDidMount and componentDidUpdate:
+  useEffect(() => {
+    // Update the document title using the browser API
+    document.title = `You clicked ${count} times`;
+  });
+
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>Click me</button>
+    </div>
+  );
+}
+```
+
+What does useEffect do? By using this Hook, you tell React that your component needs to do something after render. React will remember the function you passed (we’ll refer to it as our “effect”), and call it later after performing the DOM updates. In this effect, we set the document title, but we could also perform data fetching or call some other imperative API.
+
+Why is useEffect called inside a component? Placing useEffect inside the component lets us access the count state variable (or any props) right from the effect. We don’t need a special API to read it — it’s already in the function scope. Hooks embrace JavaScript closures and avoid introducing React-specific APIs where JavaScript already provides a solution
+
+If you want to run an effect and clean it up only once (on mount and unmount), you can pass an empty array ([]) as a second argument. This tells React that your effect doesn’t depend on any values from props or state, so it never needs to re-run. This isn’t handled as a special case — it follows directly from how the dependencies array always works.
+
 ---
 
-## Iteration 01
+## 14. <a name='Iteration01'></a>Iteration 01
 
-In this iteration we will create our first Component and app it to out App component, to display it.
+In this iteration we will create our first Component and app it to our App component, to display it.
 
 First of all - navigate to `src/components/Greeter.js` and create a new functional (or class) component, that receives two props. The name, and an emoji.
 
@@ -379,7 +455,7 @@ Key takeaways:
 
 ---
 
-## Iteration 02
+## 15. <a name='Iteration02'></a>Iteration 02
 
 We have already seen that you can pass primitive types as props (Strings, Numbers...etc), but you can also pass as props complex data structures such as Objects with data inside.
 
@@ -401,7 +477,7 @@ Then, add a button, which receives the prop `sayCatchPhrase` and inside the `onC
 
 Finally add a 'say catch phrase' text to the button.
 
-Make sure to add the `PersonDetails` component to the App! Also, give it the needed props.
+Make sure to add the `PersonDetails` component to the App! Also, give it the needed props such as the `user` object and `sayCatchPhrase` function. You can define these outside of the app scope, or inside it's body.
 
 Key takeaways:
 
@@ -413,7 +489,7 @@ Key takeaways:
 
 ---
 
-## Iteration 03
+## 16. <a name='Iteration03'></a>Iteration 03
 
 In this iteration we will be working with children nodes.
 
@@ -428,7 +504,7 @@ Make sure to add your `Card` component to the App, and give it some children. Fo
 
 ---
 
-## Iteration 04
+## 17. <a name='Iteration04'></a>Iteration 04
 
 In this iteration we will learn how to create components dynamically with data.
 
@@ -448,7 +524,9 @@ Key takeaways:
 - Mapping `data` to `components`
 - Conditional rendering
 
-## Iteration 05
+---
+
+## 18. <a name='Iteration05'></a>Iteration 05
 
 We're going to be working with lifecycles on this iteration. For this, we will revisit the `Greeter` component.
 
@@ -469,7 +547,9 @@ Key takeaways:
     - unmount
     - update
 
-## Iteration 06
+## 19. <a name='Iteration06'></a>Iteration 06
+
+---
 
 On this iteration we will be working with component `state`.
 
@@ -483,3 +563,72 @@ Key takeaways:
 
 - Into to state
 - useState hook
+
+---
+
+## 20. <a name='Iteration07'></a>Iteration 07
+
+On this final iteration we will be reviewing `routing` with `react-router-dom`
+
+First, make sure you install react-router-dom through:
+
+`yarn add react-router-dom` or `npm install react-router-dom`
+
+Making use of this library, wrap your app so that you're able to navigate through pages and render one component or another.
+
+[react-router-dom API](https://reactrouter.com/web/guides/quick-start)
+
+Given the example below:
+
+```jsx
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  useRouteMatch,
+  useParams,
+} from "react-router-dom";
+
+export default function App() {
+  return (
+    <Router>
+      <div>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
+          <li>
+            <Link to="/topics">Topics</Link>
+          </li>
+        </ul>
+
+        <Switch>
+          <Route path="/about">
+            <About />
+          </Route>
+          <Route path="/topics">
+            <Topics />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
+  );
+}
+```
+
+Navigate to `/src/App.js` and add a new Route and Switch to display a page when the url changes to `/other` and display some text. For instance, Lorem Ipsum.
+
+Keep in mind the order for the routes inside the switch. Your root route should be last.
+
+Key takeaways:
+
+- Using an external library
+- Basics of routing
+- Conditional rendering depending on routes
